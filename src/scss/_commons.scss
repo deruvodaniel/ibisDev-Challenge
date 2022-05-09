@@ -1,0 +1,38 @@
+// Variables
+
+// Colours
+
+$mainColor: #fff;
+$secondaryColor: #335A39;
+
+// Reset
+*{
+	padding: 0;
+	margin: 0;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: $mainColor;
+
+	&:hover {
+		border: 1px solid $secondaryColor;
+	}
+}
+
+::-webkit-scrollbar-thumb {
+	background:  $secondaryColor;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background-color:  $secondaryColor;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #40864c;
+}
+
