@@ -1,3 +1,5 @@
+// Breakpoints
+
 $mobile-width: 576px;
 $medium-width: 768px;
 $desktop-width: 1200px;
@@ -17,5 +19,14 @@ $desktop-width: 1200px;
 @mixin desktopScreen {
   @media screen and (min-width: $desktop-width) {
     @content;
+  }
+}
+
+// Animations
+
+@mixin animation-vertical($name, $from, $to) {
+  @keyframes #{$name} {
+    0% {transform: translateY($from); opacity: 0;}
+    100% {transform: translateY($to); opacity: 1;}
   }
 }
