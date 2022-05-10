@@ -1,3 +1,11 @@
+
+// Reset
+*{
+	scroll-behavior: smooth;
+	padding: 0;
+	margin: 0;
+}
+//----------
 // Variables
 
 // Sizes
@@ -11,16 +19,9 @@ $testXs: 16px;
 
 
 // Colours
-
 $mainColor: #fff;
 $secondaryColor: #335A39;
 
-// Reset
-*{
-	scroll-behavior: smooth;
-	padding: 0;
-	margin: 0;
-}
 
 // Scrollbar
 ::-webkit-scrollbar {
@@ -45,5 +46,22 @@ $secondaryColor: #335A39;
 
 ::-webkit-scrollbar-thumb:hover {
 	background: #40864c;
+}
+
+.arrow-container {
+	width: 50px;
+	height: 50px;
+	background-color: $mainColor;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&:hover {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+	img {
+		width: 21px;
+		height: 13px;
+	}
 }
 

@@ -1,9 +1,14 @@
 <template>
   <section class="green-section">
-    <MenuHome class="menu" @click="handleToogleMenu()" />
+    <MenuHome
+      ref="toogler"
+      :class="{ menu: menuOpen }"
+      @click.prevent="handleToogleMenu()"
+      @blur="close()"
+    />
     <div v-show="menuOpen" class="popover" ref="popover">
-      <a href="#">Home</a>
-      <a href="#white">Esperiences</a>
+      <a @click.stop="handleToogleMenu()" href="#">Home</a>
+      <a @click.stop="handleToogleMenu()" href="#white">Esperiences</a>
     </div>
     <div
       class="image-container"
@@ -76,11 +81,22 @@ export default {
     };
   },
 
+  beforeDestroy() {
+    document.removeEventListener("click", this.close);
+  },
+
   methods: {
-    handleToogleMenu(event) {
-      console.log("click");
+    handleToogleMenu() {
       this.$refs.popover.style.opacity = "1";
       this.menuOpen = !this.menuOpen;
+    },
+
+    close(event) {
+      if (event.target !== this.$refs.toogler.$el) {
+        if (!this.$refs.popover.contains(event.target)) {
+          this.menuOpen = false;
+        }
+      }
     },
 
     handleChangeImg(toogle) {
@@ -121,8 +137,8 @@ export default {
   }
   .popover {
     position: absolute;
-		top: 80px;
-		left: 100px;
+    top: 75px;
+    left: 100px;
     background-color: $secondaryColor;
     width: 180px;
     height: 150px;
@@ -187,22 +203,6 @@ export default {
     position: absolute;
     top: 432px;
     right: 20px;
-    .arrow-container {
-      width: 50px;
-      height: 50px;
-      background-color: $mainColor;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &:hover {
-        cursor: pointer;
-        opacity: 0.8;
-      }
-      img {
-        width: 21px;
-        height: 13px;
-      }
-    }
     .left-arrow {
       margin-right: 20px;
       animation-name: arrow-left-animation;
@@ -259,6 +259,10 @@ export default {
     flex-direction: row-reverse;
     height: 100vh;
     padding: 0;
+    .popover {
+      left: auto;
+      right: 120px;
+    }
     .arrow-handlers {
       top: auto;
       bottom: 70px;

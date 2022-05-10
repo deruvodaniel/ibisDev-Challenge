@@ -30,12 +30,24 @@
         </div>
       </div>
     </div>
+    <GoUpButton @click="handleGoUp()" />
   </section>
 </template>
 
 <script>
+import GoUpButton from "../components/GoUpButton.vue";
+
 export default {
   name: "WhiteSection",
+  components: {
+    GoUpButton,
+  },
+
+  methods: {
+    handleGoUp() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+  },
 };
 </script>
 
