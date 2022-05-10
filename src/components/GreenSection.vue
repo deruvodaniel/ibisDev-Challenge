@@ -100,7 +100,6 @@ export default {
     },
 
     handleChangeImg(toogle) {
-      console.log(this.$refs.imageContainer);
       this.$refs.imageContainer.style.transition = "all ease .7s";
       if (toogle === "next") {
         this.homeImage++;

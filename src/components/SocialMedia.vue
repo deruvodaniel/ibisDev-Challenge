@@ -1,13 +1,12 @@
 <template>
   <div class="social-media">
-    <a href="https://www.facebook.com/">
-      <img src="../assets/facebook.svg" alt="img-facebook" />
-    </a>
-    <a href="https://twitter.com/">
-      <img src="../assets/linkedin.svg" alt="img-linkedin" />
-    </a>
-    <a href="">
-      <img src="../assets/twitter.svg" alt="img-twitter" />
+    <a
+      v-for="item in media"
+      :key="item.name"
+      target="_blank"
+      :href="`https://www.${item.name}.com/`"
+    >
+      <img :src="require(`@/assets/${item.name}.svg`)" alt="img-facebook" />
     </a>
   </div>
 </template>
@@ -15,6 +14,11 @@
 <script>
 export default {
   name: "SocialMedia",
+  data() {
+    return {
+      media: [{ name: "facebook" }, { name: "linkedin" }, { name: "twitter" }],
+    };
+  },
 };
 </script>
 
