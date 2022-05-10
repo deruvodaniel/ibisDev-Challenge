@@ -1,6 +1,10 @@
 <template>
   <section class="green-section">
-    <MenuHome />
+    <MenuHome class="menu" @click="handleToogleMenu()" />
+    <div v-show="menuOpen" class="popover" ref="popover">
+      <a href="#">Home</a>
+      <a href="#white">Esperiences</a>
+    </div>
     <div
       class="image-container"
       ref="imageContainer"
@@ -68,10 +72,17 @@ export default {
     return {
       homeImage: 1,
       homeText: 1,
+      menuOpen: false,
     };
   },
 
   methods: {
+    handleToogleMenu(event) {
+      console.log("click");
+      this.$refs.popover.style.opacity = "1";
+      this.menuOpen = !this.menuOpen;
+    },
+
     handleChangeImg(toogle) {
       if (toogle === "next") {
         this.homeImage++;
@@ -102,6 +113,39 @@ export default {
   background-color: $secondaryColor;
   color: $mainColor;
   padding-bottom: 55px;
+  .menu {
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+    }
+  }
+  .popover {
+    position: absolute;
+		top: 80px;
+		left: 100px;
+    background-color: $secondaryColor;
+    width: 180px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    transition: all ease 1s;
+    opacity: 0;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: $textS;
+      height: 50%;
+      color: $mainColor;
+      font-weight: 600;
+      &:hover {
+        background-color: $mainColor;
+        color: $secondaryColor;
+        transition: all ease 1s;
+      }
+    }
+  }
   .image-container {
     width: auto;
     height: 482px;

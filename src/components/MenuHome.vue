@@ -1,5 +1,5 @@
 <template>
-  <div class="menu">
+  <div @click="handleClick" class="menu">
     <span></span>
     <span></span>
     <span></span>
@@ -9,6 +9,12 @@
 <script>
 export default {
   name: "MenuHome",
+
+  methods: {
+    handleClick(event) {
+      this.$emit("click", event);
+    },
+  },
 };
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="white-section">
+  <section class="white-section" id="white">
     <div class="header">
       <h2>Hay un mundo</h2>
       <span>enorme</span>
