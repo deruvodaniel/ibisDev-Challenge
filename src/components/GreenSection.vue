@@ -100,6 +100,8 @@ export default {
     },
 
     handleChangeImg(toogle) {
+      console.log(this.$refs.imageContainer);
+      this.$refs.imageContainer.style.transition = "all ease 1s";
       if (toogle === "next") {
         this.homeImage++;
         this.homeText++;
@@ -168,7 +170,7 @@ export default {
     display: flex;
     overflow-x: hidden;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
   }
   .hero {
