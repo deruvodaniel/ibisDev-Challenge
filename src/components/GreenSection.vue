@@ -170,7 +170,7 @@ export default {
     display: flex;
     overflow-x: hidden;
     background-size: cover;
-    background-position: center center;
+    background-position: bottom center;
     background-repeat: no-repeat;
   }
   .hero {
