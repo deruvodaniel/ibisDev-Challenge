@@ -50,19 +50,19 @@ export default {
   justify-content: center;
   align-items: center;
   .header {
-    padding: 30px;
+    padding: $padding30;
     color: $secondaryColor;
     width: 70%;
     text-align: left;
     h2 {
-      font-size: 30px;
+      font-size: $textM;
       font-weight: 900;
     }
     span {
       text-transform: uppercase;
       letter-spacing: 22px;
       width: 100%;
-      font-size: 30px;
+      font-size: $textM;
       font-weight: 900;
       text-align: right;
       float: right;
@@ -114,7 +114,7 @@ export default {
           font-weight: 600;
         }
         span {
-          font-size: 16px;
+          font-size: $testXs;
           line-height: 32px;
         }
       }
@@ -141,7 +141,7 @@ export default {
         padding-right: 50px;
       }
       span {
-        font-size: 80px;
+        font-size: $textXl;
         letter-spacing: 50px;
       }
     }
@@ -156,12 +156,16 @@ export default {
     .color-img-wrapper {
       top: auto;
       grid-area: 4 / 3 / 8 / 7;
-      width: 446px;
+      max-width: 446px;
+      min-width: auto;
       height: 342px;
     }
     .experiences {
       grid-area: 4 / 7 / 8 / 12;
       padding-right: 0;
+      .text-wrapper {
+        min-width: 195px;
+      }
     }
   }
 }
@@ -197,7 +201,7 @@ export default {
         font-size: 18px;
       }
       span {
-        font-size: 16px;
+        font-size: $testXs;
       }
     }
   }

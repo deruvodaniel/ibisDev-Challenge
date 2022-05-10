@@ -20,7 +20,7 @@ export default {
 .menu {
   position: absolute;
   top: 49px;
-  left: 30px;
+  left: $padding30;
   height: 57px;
   width: 57px;
   background-color: $secondaryColor;

@@ -112,7 +112,7 @@ export default {
     background-repeat: no-repeat;
   }
   .hero {
-    padding: 72px 30px 30px 30px;
+    padding: 72px $padding30 $padding30 $padding30;
     h1 {
       font-size: 35px;
       padding-bottom: 12px;
@@ -129,7 +129,7 @@ export default {
       animation-iteration-count: 1;
       span {
         line-height: 45px;
-        font-size: 16px;
+        font-size: $testXs;
         animation-name: span-animation;
         animation-duration: 1s;
         animation-iteration-count: 1;
@@ -248,11 +248,11 @@ export default {
       justify-content: center;
       padding: 0 100px;
       h1 {
-        font-size: 60px;
+        font-size: $textL;
         padding-bottom: 41px;
       }
       span {
-        font-size: 16px;
+        font-size: $testXs;
         padding-top: 39px;
       }
     }
